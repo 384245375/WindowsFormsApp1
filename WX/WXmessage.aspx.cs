@@ -1,6 +1,4 @@
-﻿using Senparc.Weixin.MP;
-using Senparc.Weixin.MP.Entities;
-using Senparc.Weixin.MP.Entities.Request;
+﻿
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -60,6 +58,7 @@ namespace WX
                     postString = Encoding.GetEncoding("GBK").GetString(postBytes);
                     help h = new help();
                     string responseContent = h.ReturnMessage(postString);
+                   
                     //返回的消息为UTF-8格式
                     HttpContext.Current.Response.ContentEncoding = Encoding.UTF8;
                     HttpContext.Current.Response.Write(responseContent);
